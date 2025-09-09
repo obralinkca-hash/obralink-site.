@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: <tu-usuario>/<tu-repo> # ejemplo: obralink/obralink-site
+  branch: main
+  base_url: https://<tu-dominio-oauth> # URL de tu proxy OAuth para GitHub (p.ej. https://oauth.yoursite.com)
+  auth_endpoint: /auth
+media_folder: "public/uploads"
+public_folder: "/uploads"
+publish_mode: editorial_workflow
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Descripción", name: "excerpt", widget: "text" }
+      - { label: "Imagen Destacada", name: "cover", widget: "image", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
