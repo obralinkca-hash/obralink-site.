@@ -1,3 +1,4 @@
+"use client";
 export default function LogoMarquee() {
   const logos = Array.from({ length: 6 }).map((_, i) => `/images/aliados/logo-${i+1}.svg`);
   return (
